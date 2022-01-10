@@ -114,10 +114,10 @@
                       </v-col>
                   </v-row>
                   <v-row dense align-content="space-around">
-                      <v-col > <v-btn @click="makeNode()" width="40" >make</v-btn> </v-col>
-                      <v-col > <v-btn @click="delNode" width="40">del</v-btn></v-col>
+                      <v-col > <v-btn @click="makeNode()" width="40" >add</v-btn> </v-col>
+                      <v-col > <v-btn @click="delNode" width="40">delete</v-btn></v-col>
                       <v-col > <v-btn @click="clearMap(null)" width="40">clear</v-btn></v-col>
-                      <v-col > <v-btn @click="openInput('fileInput')"  width="40">load</v-btn></v-col>
+<!--                      <v-col > <v-btn @click="openInput('fileInput')"  width="40">load</v-btn></v-col>-->
                       <v-col > <v-btn @click="makeQuery(queryCode,null)" width="40">query</v-btn></v-col>
                   </v-row>
                   <v-file-input hide-input id="fileInput"
@@ -294,7 +294,7 @@
                   <thead >
                   <tr>
                     <th></th>
-                    <th class="text-h5">AGM Bound</th>
+                    <th class="text-h5">AGM</th>
                     <th class="text-h5">LSS</th>
                   </tr>
                   </thead>
@@ -315,9 +315,9 @@
                     <td class="text-h6">{{queryInfo[1].overallTime}}</td>
                   </tr>
                   <tr>
-                    <td class="text-h6">plan variance</td>
-                    <td class="text-h6">{{queryInfo[0].planDistinctness.toFixed(3)}}</td>
-                    <td class="text-h6">{{queryInfo[1].planDistinctness.toFixed(3)}}</td>
+                    <td class="text-h6">coefficient of variation</td>
+                    <td class="text-h6">{{queryInfo[0].planDistinctness.toFixed(4)}}</td>
+                    <td class="text-h6">{{queryInfo[1].planDistinctness.toFixed(4)}}</td>
                   </tr>
                   <tr>
                     <td class="text-h6">result size</td>
@@ -338,14 +338,13 @@
             <div class="text-h5" style="text-align: center">candidate GHD plans </div>
 
             <v-row>
-              <v-col cols="1"></v-col>
+              <v-col cols="0.5"></v-col>
               <v-col> <div class="text-h6" style="text-align: center">AGM plans</div> </v-col>
               <v-col> <div class="text-h6" style="text-align: center">LSS plans</div> </v-col>
-
             </v-row>
             <v-radio-group v-model="selectedPtr">
-                <v-row dense align="center" v-for="i in 5" :key="'resultrow'+i">
-                  <v-col cols="1">
+                <v-row  align="center" v-for="i in 5" :key="'resultrow'+i">
+                  <v-col cols="0.5">
                     <v-radio :value="i-1" ></v-radio>
                   </v-col>
                   <v-col>
@@ -455,7 +454,7 @@
       lss:[],
     },
     displayFlag:true,
-    queryResultSize:0,
+      resultPanel:null,
     queryInfoHeader:[
       {text: "category", value: "category"},
       {text:"joinTime", value:"joinTime"},
@@ -651,7 +650,7 @@
                   $(go.Panel, "Auto",
                           $(go.Shape, "RoundedRectangle",
                                   {
-                                  	width:83,
+                                  	width:70,
                                     height:130,
                                     fill: "#D2A8B2", // the default fill, if there is no data bound value
                                     portId: "", cursor: "pointer",  // the Shape is the port, not the whole Node
@@ -986,8 +985,10 @@
           if (otherData){
             for (let i=0;i<otherData.relations.length;i++){
               let relation = otherData.relations[i];
-              str+= '('+relation.toString()+")\n";
+              str+= '('+relation.toString()+") ";
+              if (i % 2 === 1) str += '\n'
             }
+            if (otherData.relations.length % 2 === 1) str += '\n'
             if (otherData.cardinality !== undefined) str += "cardinality: \n" + otherData.cardinality + "\n";
             if (otherData.time !== undefined) str += "time: " + otherData.time + "\n";
           }
@@ -1185,7 +1186,7 @@
     }
 
     .query_graph_gojspanel{
-        width:360px;
+        width:350px;
         height:315px;
         border: 2px solid black;
         margin: 0 auto;
@@ -1193,17 +1194,17 @@
 
     .plans_gojspanel{
         border: 2px solid black;
-        width:320px;
+        width:310px;
         height:220px;
         margin: 0 auto;
     }
 
     .agm_gojspanel{
-        width:320px; border: 2px solid black;height:220px; margin: 0 auto
+        width:310px; border: 2px solid black;height:220px; margin: 0 auto
     }
 
     .lss_gojspanel{
-        width:320px; border: 2px solid black;height:220px; margin: 0 auto
+        width:310px; border: 2px solid black;height:220px; margin: 0 auto
     }
 
     .title{
