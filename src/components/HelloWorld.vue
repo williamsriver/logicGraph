@@ -126,7 +126,7 @@
                   </v-file-input>
               </v-card>
           </v-col>
-          <v-col >
+          <v-col>
               <v-card class="overflow-y-auto" height="400">
                   <div class="title text-h5" style="text-align: center;">query information</div>
                   <v-data-table
@@ -349,10 +349,13 @@
                     <v-radio :value="i-1" ></v-radio>
                   </v-col>
                   <v-col>
-                    <div :id="'AGMPlans0'+(i-1)+'Div'" :style="{'background-color': selectedPtr===i-1?'#DAE6E4':'#ffffff'}" class="plans_gojspanel"></div>
+                    <div :id="'AGMPlans0'+(i-1)+'Div'"
+                         :class="{'gojspanel_basic':selectedPtr===i-1}"
+                          class="plans_gojspanel"></div>
                   </v-col>
                   <v-col>
-                    <div :id="'LSSPlans0'+(i-1)+'Div'" :style="{'background-color': selectedPtr===i-1?'#DAE6E4':'#ffffff'}" class="plans_gojspanel"></div>
+                    <div :id="'LSSPlans0'+(i-1)+'Div'" :class="{ 'gojspanel_basic' :selectedPtr===i-1}"
+                         class="plans_gojspanel" ></div>
                   </v-col>
                 </v-row>
 <!--            <v-row align="center">-->
@@ -630,7 +633,7 @@
                                   {
                                   	//vertex setting
                                     width:40, height:40, stroke: "#000000",fill:"#D2A8B2",
-                                    strokeWidth: givenDivOrder?2:2, portId: "", cursor: "pointer",  // the Shape is the port, not the whole Node
+                                    strokeWidth: 2, portId: "", cursor: "pointer",  // the Shape is the port, not the whole Node
                                     fromLinkable: true, fromLinkableSelfNode: false, fromLinkableDuplicates: false,
                                     toLinkable: true, toLinkableSelfNode: false, toLinkableDuplicates: false,
                                     //
@@ -648,6 +651,7 @@
                   $(go.Panel, "Auto",
                           $(go.Shape, "RoundedRectangle",
                                   {
+                                  	width:83,
                                     height:130,
                                     fill: "#D2A8B2", // the default fill, if there is no data bound value
                                     portId: "", cursor: "pointer",  // the Shape is the port, not the whole Node
@@ -659,7 +663,7 @@
                           $(go.TextBlock,
                                   {
                                     font: "bold 12px  sans-serif",
-                                    stroke: '#333',
+                                    stroke: '#000000',
                                     margin: 6,  // make some extra space for the shape around the text
                                     isMultiline: true,  // don't allow newlines in text
                                     editable: true  // allow in-place editing by user
@@ -1188,7 +1192,10 @@
     }
 
     .plans_gojspanel{
-        border: 2px solid black;width:320px; height:220px; margin: 0 auto
+        border: 2px solid black;
+        width:320px;
+        height:220px;
+        margin: 0 auto;
     }
 
     .agm_gojspanel{
