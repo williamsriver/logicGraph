@@ -741,7 +741,7 @@
 
 
         this.axios.get(!selectId?this.getRefreshQueryCode(this.datasetValue):"api/plan/"+selectId,{
-          timeout: 60
+          timeout: 60000
         })
         .then(response=>{
           console.log(response);
@@ -1191,17 +1191,17 @@
 
     .plans_gojspanel{
         border: 2px solid black;
-        width:310px;
+        width:320px;
         height:220px;
         margin: 0 auto;
     }
 
     .agm_gojspanel{
-        width:310px; border: 2px solid black;height:220px; margin: 0 auto
+        width:320px; border: 2px solid black;height:220px; margin: 0 auto
     }
 
     .lss_gojspanel{
-        width:310px; border: 2px solid black;height:220px; margin: 0 auto
+        width:320px; border: 2px solid black;height:220px; margin: 0 auto
     }
 
     .title{
