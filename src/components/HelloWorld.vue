@@ -8,126 +8,133 @@
               <v-card height="400" flat class="overflow-y-hidden">
                   <v-card height="400" v-show="datasetValue==='aids'" class="overflow-y-auto">
                       <div class="title text-h5" style="text-align: center; ">example patterns</div>
-                      <div id="Dis00Div" style=" border: 2px solid black; width:180px; height:190px;background-color: #56cef3; margin: 0 auto"></div>
-                      <div class="text-center"><v-btn text @click="loadMap(null,null,aids_query[0])"><v-icon>mdi-arrow-right</v-icon> </v-btn></div>
-                      <v-spacer style="height: 20px"></v-spacer>
+                      <v-container fluid v-for="i in 10" :key="i">
+                          <div :id="'Dis0'+(i-1)+'Div'" class="gojspanel_basic example_patterns_gojspanel"></div>
+                          <div class="text-center">
+                              <v-btn text @click="loadMap(null,null,aids_query[i-1])">
+                                  <v-icon>mdi-arrow-right</v-icon>
+                              </v-btn>
+                          </div>
+                      </v-container>
+<!--                      <div id="Dis00Div" class="gojspanel_basic example_patterns_gojspane l"></div>-->
+<!--                      <div class="text-center"><v-btn text @click="loadMap(null,null,aids_query[0])"><v-icon>mdi-arrow-right</v-icon> </v-btn></div>-->
+<!--                      <v-spacer style="height: 20px"></v-spacer>-->
 
-                      <div id="Dis01Div" style="border: 2px solid black; width:180px; height:190px;background-color: #56cef3; margin: 0 auto"></div>
-                      <div class="text-center"><v-btn text @click="loadMap(null,null,aids_query[1])"><v-icon>mdi-arrow-right</v-icon> </v-btn></div>
-                      <v-spacer style="height: 20px"></v-spacer>
+<!--                      <div id="Dis01Div" class="gojspanel" style="border: 2px solid black; width:180px; height:190px;margin: 0 auto"></div>-->
+<!--                      <div class="text-center"><v-btn text @click="loadMap(null,null,aids_query[1])"><v-icon>mdi-arrow-right</v-icon> </v-btn></div>-->
+<!--                      <v-spacer style="height: 20px"></v-spacer>-->
 
-                      <div id="Dis02Div" style="border: 2px solid black; width:180px; height:190px;background-color: #56cef3; margin: 0 auto"></div>
-                      <div class="text-center"><v-btn text @click="loadMap(null,null,aids_query[2])"><v-icon>mdi-arrow-right</v-icon> </v-btn></div>
-                      <v-spacer style="height: 20px"></v-spacer>
+<!--                      <div id="Dis02Div" style=""></div>-->
+<!--                      <div class="text-center"><v-btn text @click="loadMap(null,null,aids_query[2])"><v-icon>mdi-arrow-right</v-icon> </v-btn></div>-->
+<!--                      <v-spacer style="height: 20px"></v-spacer>-->
 
-                      <div id="Dis03Div" style="width:180px; height:190px;background-color: #56cef3;margin: 0 auto "></div>
-                      <div class="text-center"><v-btn text @click="loadMap(null,null,aids_query[3])"><v-icon>mdi-arrow-right</v-icon> </v-btn></div>
-                      <v-spacer style="height: 20px"></v-spacer>
+<!--                      <div id="Dis03Div" style="width:180px; height:190px;background-color: #56cef3;margin: 0 auto "></div>-->
+<!--                      <div class="text-center"><v-btn text @click="loadMap(null,null,aids_query[3])"><v-icon>mdi-arrow-right</v-icon> </v-btn></div>-->
+<!--                      <v-spacer style="height: 20px"></v-spacer>-->
 
-                      <div id="Dis04Div" style="border: 2px solid black; width:180px; height:190px;background-color: #56cef3; margin: 0 auto"></div>
-                      <div class="text-center"><v-btn text @click="loadMap(null,null,aids_query[4])"><v-icon>mdi-arrow-right</v-icon> </v-btn></div>
-                      <v-spacer style="height: 20px"></v-spacer>
+<!--                      <div id="Dis04Div" style="border: 2px solid black; width:180px; height:190px;background-color: #56cef3; margin: 0 auto"></div>-->
+<!--                      <div class="text-center"><v-btn text @click="loadMap(null,null,aids_query[4])"><v-icon>mdi-arrow-right</v-icon> </v-btn></div>-->
+<!--                      <v-spacer style="height: 20px"></v-spacer>-->
 
-                      <div id="Dis05Div" style="border: 2px solid black; width:180px; height:190px;background-color: #56cef3; margin: 0 auto"></div>
-                      <div class="text-center"><v-btn text @click="loadMap(null,null,aids_query[5])"><v-icon>mdi-arrow-right</v-icon> </v-btn></div>
-                      <v-spacer style="height: 20px"></v-spacer>
-                      <div id="Dis06Div" style="border: 2px solid black; width:180px; height:190px;background-color: #56cef3; margin: 0 auto"></div>
-                      <div class="text-center"><v-btn text @click="loadMap(null,null,aids_query[6])"><v-icon>mdi-arrow-right</v-icon> </v-btn></div>
-                      <v-spacer style="height: 20px"></v-spacer>
-                      <div id="Dis07Div" style="border: 2px solid black; width:180px; height:190px;background-color: #56cef3; margin: 0 auto"></div>
-                      <div class="text-center"><v-btn text @click="loadMap(null,null,aids_query[7])"><v-icon>mdi-arrow-right</v-icon> </v-btn></div>
-                      <v-spacer style="height: 20px"></v-spacer>
-                      <div id="Dis08Div" style="border: 2px solid black; width:180px; height:190px;background-color: #56cef3; margin: 0 auto"></div>
-                      <div class="text-center"><v-btn text @click="loadMap(null,null,aids_query[8])"><v-icon>mdi-arrow-right</v-icon> </v-btn></div>
-                      <v-spacer style="height: 20px"></v-spacer>
-                      <div id="Dis09Div" style="border: 2px solid black; width:180px; height:190px;background-color: #56cef3; margin: 0 auto"></div>
-                      <div class="text-center"><v-btn text @click="loadMap(null,null,aids_query[9])"><v-icon>mdi-arrow-right</v-icon> </v-btn></div>
-                      <v-spacer style="height: 20px"></v-spacer>
+<!--                      <div id="Dis05Div" style="border: 2px solid black; width:180px; height:190px;background-color: #56cef3; margin: 0 auto"></div>-->
+<!--                      <div class="text-center"><v-btn text @click="loadMap(null,null,aids_query[5])"><v-icon>mdi-arrow-right</v-icon> </v-btn></div>-->
+<!--                      <v-spacer style="height: 20px"></v-spacer>-->
+<!--                      <div id="Dis06Div" style="border: 2px solid black; width:180px; height:190px;background-color: #56cef3; margin: 0 auto"></div>-->
+<!--                      <div class="text-center"><v-btn text @click="loadMap(null,null,aids_query[6])"><v-icon>mdi-arrow-right</v-icon> </v-btn></div>-->
+<!--                      <v-spacer style="height: 20px"></v-spacer>-->
+<!--                      <div id="Dis07Div" style="border: 2px solid black; width:180px; height:190px;background-color: #56cef3; margin: 0 auto"></div>-->
+<!--                      <div class="text-center"><v-btn text @click="loadMap(null,null,aids_query[7])"><v-icon>mdi-arrow-right</v-icon> </v-btn></div>-->
+<!--                      <v-spacer style="height: 20px"></v-spacer>-->
+<!--                      <div id="Dis08Div" style="border: 2px solid black; width:180px; height:190px;background-color: #56cef3; margin: 0 auto"></div>-->
+<!--                      <div class="text-center"><v-btn text @click="loadMap(null,null,aids_query[8])"><v-icon>mdi-arrow-right</v-icon> </v-btn></div>-->
+<!--                      <v-spacer style="height: 20px"></v-spacer>-->
+<!--                      <div id="Dis09Div" style="border: 2px solid black; width:180px; height:190px;background-color: #56cef3; margin: 0 auto"></div>-->
+<!--                      <div class="text-center"><v-btn text @click="loadMap(null,null,aids_query[9])"><v-icon>mdi-arrow-right</v-icon> </v-btn></div>-->
+<!--                      <v-spacer style="height: 20px"></v-spacer>-->
 
 
                   </v-card>
                   <v-card height="400" class="overflow-y-auto">
                       <div class="title text-h5" style="text-align: center; ">example patterns</div>
-                      <div id="Dis015Div" style="border: 2px solid black; width:180px; height:190px;background-color: #56cef3; margin: 0 auto"></div>
-                      <div class="text-center"><v-btn text @click="loadMap(null,null,wordnet_query[0])"><v-icon>mdi-arrow-right</v-icon> </v-btn></div>
-                      <v-spacer style="height: 20px"></v-spacer>
+                      <v-container fluid v-for="i in 10" :key="i">
+                          <div :id="'Dis0'+(i+14)+'Div'" class="gojspanel_basic example_patterns_gojspanel"></div>
+                          <div class="text-center">
+                              <v-btn text @click="loadMap(null,null,wordnet_query[i-1])">
+                                  <v-icon>mdi-arrow-right</v-icon>
+                              </v-btn>
+                          </div>
+                      </v-container>
+<!--                      <div id="Dis015Div" style="border: 2px solid black; width:180px; height:190px;background-color: #56cef3; margin: 0 auto"></div>-->
+<!--                      <div class="text-center"><v-btn text @click="loadMap(null,null,wordnet_query[0])"><v-icon>mdi-arrow-right</v-icon> </v-btn></div>-->
+<!--                      <v-spacer style="height: 20px"></v-spacer>-->
 
-                      <div id="Dis016Div" style="border: 2px solid black; width:180px; height:190px;background-color: #56cef3; margin: 0 auto"></div>
-                      <div class="text-center"><v-btn text @click="loadMap(null,null,wordnet_query[1])"><v-icon>mdi-arrow-right</v-icon> </v-btn></div>
-                      <v-spacer style="height: 20px"></v-spacer>
+<!--                      <div id="Dis016Div" style="border: 2px solid black; width:180px; height:190px;background-color: #56cef3; margin: 0 auto"></div>-->
+<!--                      <div class="text-center"><v-btn text @click="loadMap(null,null,wordnet_query[1])"><v-icon>mdi-arrow-right</v-icon> </v-btn></div>-->
+<!--                      <v-spacer style="height: 20px"></v-spacer>-->
 
-                      <div id="Dis017Div" style="border: 2px solid black; width:180px; height:190px;background-color: #56cef3; margin: 0 auto"></div>
-                      <div class="text-center"><v-btn text @click="loadMap(null,null,wordnet_query[2])"><v-icon>mdi-arrow-right</v-icon> </v-btn></div>
-                      <v-spacer style="height: 20px"></v-spacer>
+<!--                      <div id="Dis017Div" style="border: 2px solid black; width:180px; height:190px;background-color: #56cef3; margin: 0 auto"></div>-->
+<!--                      <div class="text-center"><v-btn text @click="loadMap(null,null,wordnet_query[2])"><v-icon>mdi-arrow-right</v-icon> </v-btn></div>-->
+<!--                      <v-spacer style="height: 20px"></v-spacer>-->
 
-                      <div id="Dis018Div" style="width:180px; height:190px;background-color: #56cef3;margin: 0 auto "></div>
-                      <div class="text-center"><v-btn text @click="loadMap(null,null,wordnet_query[3])"><v-icon>mdi-arrow-right</v-icon> </v-btn></div>
-                      <v-spacer style="height: 20px"></v-spacer>
+<!--                      <div id="Dis018Div" style="width:180px; height:190px;background-color: #56cef3;margin: 0 auto "></div>-->
+<!--                      <div class="text-center"><v-btn text @click="loadMap(null,null,wordnet_query[3])"><v-icon>mdi-arrow-right</v-icon> </v-btn></div>-->
+<!--                      <v-spacer style="height: 20px"></v-spacer>-->
 
-                      <div id="Dis019Div" style="border: 2px solid black; width:180px; height:190px;background-color: #56cef3; margin: 0 auto"></div>
-                      <div class="text-center"><v-btn text @click="loadMap(null,null,wordnet_query[4])"><v-icon>mdi-arrow-right</v-icon> </v-btn></div>
-                      <v-spacer style="height: 20px"></v-spacer>
+<!--                      <div id="Dis019Div" style="border: 2px solid black; width:180px; height:190px;background-color: #56cef3; margin: 0 auto"></div>-->
+<!--                      <div class="text-center"><v-btn text @click="loadMap(null,null,wordnet_query[4])"><v-icon>mdi-arrow-right</v-icon> </v-btn></div>-->
+<!--                      <v-spacer style="height: 20px"></v-spacer>-->
 
-                      <div id="Dis020Div" style="border: 2px solid black; width:180px; height:190px;background-color: #56cef3; margin: 0 auto"></div>
-                      <div class="text-center"><v-btn text @click="loadMap(null,null,wordnet_query[5])"><v-icon>mdi-arrow-right</v-icon> </v-btn></div>
-                      <v-spacer style="height: 20px"></v-spacer>
-                      <div id="Dis021Div" style="border: 2px solid black; width:180px; height:190px;background-color: #56cef3; margin: 0 auto"></div>
-                      <div class="text-center"><v-btn text @click="loadMap(null,null,wordnet_query[6])"><v-icon>mdi-arrow-right</v-icon> </v-btn></div>
-                      <v-spacer style="height: 20px"></v-spacer>
-                      <div id="Dis022Div" style="border: 2px solid black; width:180px; height:190px;background-color: #56cef3; margin: 0 auto"></div>
-                      <div class="text-center"><v-btn text @click="loadMap(null,null,wordnet_query[7])"><v-icon>mdi-arrow-right</v-icon> </v-btn></div>
-                      <v-spacer style="height: 20px"></v-spacer>
-                      <div id="Dis023Div" style="border: 2px solid black; width:180px; height:190px;background-color: #56cef3; margin: 0 auto"></div>
-                      <div class="text-center"><v-btn text @click="loadMap(null,null,wordnet_query[8])"><v-icon>mdi-arrow-right</v-icon> </v-btn></div>
-                      <v-spacer style="height: 20px"></v-spacer>
-                      <div id="Dis024Div" style="border: 2px solid black; width:180px; height:190px;background-color: #56cef3; margin: 0 auto"></div>
-                      <div class="text-center"><v-btn text @click="loadMap(null,null,wordnet_query[9])"><v-icon>mdi-arrow-right</v-icon> </v-btn></div>
-                      <v-spacer style="height: 20px"></v-spacer>
+<!--                      <div id="Dis020Div" style="border: 2px solid black; width:180px; height:190px;background-color: #56cef3; margin: 0 auto"></div>-->
+<!--                      <div class="text-center"><v-btn text @click="loadMap(null,null,wordnet_query[5])"><v-icon>mdi-arrow-right</v-icon> </v-btn></div>-->
+<!--                      <v-spacer style="height: 20px"></v-spacer>-->
+<!--                      <div id="Dis021Div" style="border: 2px solid black; width:180px; height:190px;background-color: #56cef3; margin: 0 auto"></div>-->
+<!--                      <div class="text-center"><v-btn text @click="loadMap(null,null,wordnet_query[6])"><v-icon>mdi-arrow-right</v-icon> </v-btn></div>-->
+<!--                      <v-spacer style="height: 20px"></v-spacer>-->
+<!--                      <div id="Dis022Div" style="border: 2px solid black; width:180px; height:190px;background-color: #56cef3; margin: 0 auto"></div>-->
+<!--                      <div class="text-center"><v-btn text @click="loadMap(null,null,wordnet_query[7])"><v-icon>mdi-arrow-right</v-icon> </v-btn></div>-->
+<!--                      <v-spacer style="height: 20px"></v-spacer>-->
+<!--                      <div id="Dis023Div" style="border: 2px solid black; width:180px; height:190px;background-color: #56cef3; margin: 0 auto"></div>-->
+<!--                      <div class="text-center"><v-btn text @click="loadMap(null,null,wordnet_query[8])"><v-icon>mdi-arrow-right</v-icon> </v-btn></div>-->
+<!--                      <v-spacer style="height: 20px"></v-spacer>-->
+<!--                      <div id="Dis024Div" style="border: 2px solid black; width:180px; height:190px;background-color: #56cef3; margin: 0 auto"></div>-->
+<!--                      <div class="text-center"><v-btn text @click="loadMap(null,null,wordnet_query[9])"><v-icon>mdi-arrow-right</v-icon> </v-btn></div>-->
+<!--                      <v-spacer style="height: 20px"></v-spacer>-->
 
                   </v-card>
               </v-card>
 
 
           </v-col>
-          <v-col cols="3" style="">
+          <v-col cols="3" >
               <v-card class="pa-0 ma-0 overflow-y-auto overflow-x-hidden" height="400">
-                  <div class="title text-h5" style="text-align: center; "> query graph</div>
+                  <div class="title text-h5" style="text-align: center; ">query graph</div>
                   <v-row dense>
                       <v-col>
-
-                                <div id="myDiagramDiv" style="width:360px; height:315px; background-color: #56cef3;
-                                border: 2px solid black; margin: 0 auto;"></div>
-
-
-
+                          <div id="myDiagramDiv" class="gojspanel_basic query_graph_gojspanel"></div>
                       </v-col>
                   </v-row>
-                  <v-row dense>
-                      <v-spacer></v-spacer>
-                      <v-col> <v-btn @click="makeNode()" width="50" >make</v-btn> </v-col>
-                      <v-col> <v-btn @click="delNode" width="50">del</v-btn></v-col>
-                      <v-col> <v-btn @click="clearMap(null)" width="50">clear</v-btn></v-col>
-                      <v-col> <v-btn @click="openInput('fileInput')"  width="50">load</v-btn></v-col>
-                      <v-col> <v-btn  @click="makeQuery(queryCode,null)">query</v-btn></v-col>
-                      <v-file-input hide-input id="fileInput"
-                                    @change ="loadMap(makingFile, null)"
-                                    v-model="makingFile" v-show="false">
-                      </v-file-input>
-                      <v-spacer></v-spacer>
+                  <v-row dense align-content="space-around">
+                      <v-col > <v-btn @click="makeNode()" width="40" >make</v-btn> </v-col>
+                      <v-col > <v-btn @click="delNode" width="40">del</v-btn></v-col>
+                      <v-col > <v-btn @click="clearMap(null)" width="40">clear</v-btn></v-col>
+                      <v-col > <v-btn @click="openInput('fileInput')"  width="40">load</v-btn></v-col>
+                      <v-col > <v-btn @click="makeQuery(queryCode,null)" width="40">query</v-btn></v-col>
                   </v-row>
+                  <v-file-input hide-input id="fileInput"
+                                @change ="loadMap(makingFile, null)"
+                                v-model="makingFile" v-show="false">
+                  </v-file-input>
               </v-card>
           </v-col>
-          <v-col  style="">
+          <v-col >
               <v-card class="overflow-y-auto" height="400">
                   <div class="title text-h5" style="text-align: center;">query information</div>
                   <v-data-table
-
                           v-if="myDiagram && displayFlag"
                           :headers="graphHeader"
                           :items="myDiagram.model.linkDataArray"
                           hide-default-header
-                          hide-default-footer
-                          >
+                          hide-default-footer>
                       <template v-slot:header="{ props: { headers } }">
                           <thead>
                           <tr>
@@ -151,8 +158,6 @@
                                   <v-row dense>
                                       <v-col><v-icon class="mr-2" @click="editItem(item)">mdi-pencil</v-icon></v-col>
                                       <v-col><v-icon @click="myDiagram.model.removeLinkData(item)">mdi-delete</v-icon></v-col>
-
-
                                   </v-row>
                               </td>
 
@@ -185,7 +190,6 @@
                       </template>
                       -->
                       <template v-slot:top>
-
                           <v-dialog v-model="panelDialog" max-width="500px">
                               <v-card>
                                   <v-card-title>
@@ -241,7 +245,7 @@
                 <div >wordnet is a lexical network with 76,853 vertices and 120,399 edges. The vertex label distribution is as follows:</div>
                 <v-row>
                     <v-spacer></v-spacer>
-                    <v-col><v-img src="../assets/wordnet_label.jpg" width="350" /></v-col>
+                    <v-col><v-img src="../assets/wordnet_label(2).ac408ebe.jpg" width="350" /></v-col>
                     <v-spacer></v-spacer>
                 </v-row>
 
@@ -251,12 +255,12 @@
                 <div >Aids is a biological network with 253,598 vertices and 273,955 edges. The vertex label distribution and edge label distribution are as follows:</div>
                   <v-row>
                       <v-spacer></v-spacer>
-                      <v-col><v-img src="../assets/aids_vertex_label.jpg" max-width="350"/></v-col>
+                      <v-col><v-img src="../assets/aids_vertex_label(2).4c2d629e.jpg" max-width="350"/></v-col>
                       <v-spacer></v-spacer>
                   </v-row>
                   <v-row>
                       <v-spacer></v-spacer>
-                      <v-col><v-img src="../assets/aids_edge_label.jpg" max-width="350"/></v-col>
+                      <v-col><v-img src="../assets/aids_edge_label(2).7dde502f.jpg" max-width="350"/></v-col>
                       <v-spacer></v-spacer>
                   </v-row>
 
@@ -268,7 +272,7 @@
         <v-spacer style="height: 8px"></v-spacer>
       <v-card>
         <v-row>
-          <v-col style="">
+          <v-col cols="5.5">
             <v-card height="700">
             <div class="title" style="text-align: center">selected GHD plan </div>
             <v-row>
@@ -277,10 +281,10 @@
             </v-row>
             <v-row>
               <v-col>
-                <div id="AGMDiv" style="background-color:#56cef3; width:350px; border: 2px solid black;height:216px; margin: 0 auto"></div>
+                <div id="AGMDiv" class="gojspanel_basic agm_gojspanel"></div>
               </v-col>
               <v-col>
-                <div id="LSSDiv" style="background-color:#56cef3; width:350px; border: 2px solid black;height:216px; margin: 0 auto"></div>
+                <div id="LSSDiv" class="gojspanel_basic lss_gojspanel"></div>
               </v-col>
             </v-row>
             <v-row>
@@ -329,7 +333,7 @@
 
             </v-card>
           </v-col>
-          <v-col cols="6">
+          <v-col cols="6.5">
             <v-card height="700" class="overflow-y-auto">
             <div class="text-h5" style="text-align: center">candidate GHD plans </div>
 
@@ -337,71 +341,69 @@
               <v-col cols="1"></v-col>
               <v-col> <div class="text-h6" style="text-align: center">AGM plans</div> </v-col>
               <v-col> <div class="text-h6" style="text-align: center">LSS plans</div> </v-col>
-              
+
             </v-row>
             <v-radio-group v-model="selectedPtr">
-            <v-row align="center">
-              <v-col cols="1">
-                <v-radio :value="0" ></v-radio>
-              </v-col>
-              <v-col>
-                <div id="AGMPlans00Div" :style="{'background-color': selectedPtr===0?'#56cef3':'#ffffff'}" style="border: 2px solid black;width:350px; height:216px; margin: 0 auto"></div>
-              </v-col>
-              <v-col>
-                <div id="LSSPlans00Div" :style="{'background-color': selectedPtr===0?'#56cef3':'#ffffff'}" style="border: 2px solid black;width:350px; height:216px;margin: 0 auto"></div>
-              </v-col>
-            </v-row>
-            <v-row align="center">
-              <v-col cols="1">
-                <v-radio :value="1"></v-radio>
-              </v-col>
-              <v-col>
-                <div id="AGMPlans01Div" :style="{'background-color': selectedPtr===1?'#56cef3':'#ffffff'}" style="border: 2px solid black;width:350px; height:216px; margin: 0 auto"></div>
-              </v-col>
-              <v-col>
-                <div id="LSSPlans01Div" :style="{'background-color': selectedPtr===1?'#56cef3':'#ffffff'}"  style="border: 2px solid black;width:350px; height:216px; margin: 0 auto"></div>
-              </v-col>
-            </v-row>
-            <v-row align="center">
-              <v-col cols="1">
-                      <v-radio :value="2" ></v-radio>
-              </v-col>
-              <v-col>
-                <div id="AGMPlans02Div" :style="{'background-color': selectedPtr===2?'#56cef3':'#ffffff'}" style="border: 2px solid black;width:350px; height:216px; margin: 0 auto"></div>
-              </v-col>
-              <v-col>
-                <div id="LSSPlans02Div" :style="{'background-color': selectedPtr===2?'#56cef3':'#ffffff'}" style="border: 2px solid black;width:350px; height:216px; margin: 0 auto"></div>
-              </v-col>
-            </v-row>
-            <v-row align="center">
-              <v-col cols="1">
-                <v-radio :value="3" ></v-radio>
-              </v-col>
-              <v-col>
-                <div id="AGMPlans03Div" :style="{'background-color': selectedPtr===3?'#56cef3':'#ffffff'}" style="border: 2px solid black;width:350px; height:216px; margin: 0 auto"></div>
-              </v-col>
-              <v-col>
-                <div id="LSSPlans03Div" :style="{'background-color': selectedPtr===3?'#56cef3':'#ffffff'}" style="border: 2px solid black;width:350px; height:216px; margin: 0 auto"></div>
-              </v-col>
-            </v-row>
-            <v-row align="center">
-              <v-col cols="1">
-                <v-radio :value="4" ></v-radio>
-              </v-col>
-              <v-col >
-                <div id="AGMPlans04Div" :style="{'background-color': selectedPtr===4?'#56cef3':'#ffffff'}" style="border: 2px solid black;width:350px; height:216px; margin: 0 auto"></div>
-              </v-col>
-              <v-col>
-                <div id="LSSPlans04Div" :style="{'background-color': selectedPtr===4?'#56cef3':'#ffffff'}" style="border: 2px solid black;width:350px; height:216px; margin: 0 auto"></div>
-              </v-col>
-            </v-row>
+                <v-row dense align="center" v-for="i in 5" :key="'resultrow'+i">
+                  <v-col cols="1">
+                    <v-radio :value="i-1" ></v-radio>
+                  </v-col>
+                  <v-col>
+                    <div :id="'AGMPlans0'+(i-1)+'Div'" :style="{'background-color': selectedPtr===i-1?'#DAE6E4':'#ffffff'}" class="plans_gojspanel"></div>
+                  </v-col>
+                  <v-col>
+                    <div :id="'LSSPlans0'+(i-1)+'Div'" :style="{'background-color': selectedPtr===i-1?'#DAE6E4':'#ffffff'}" class="plans_gojspanel"></div>
+                  </v-col>
+                </v-row>
+<!--            <v-row align="center">-->
+<!--              <v-col cols="1">-->
+<!--                <v-radio :value="1"></v-radio>-->
+<!--              </v-col>-->
+<!--              <v-col>-->
+<!--                <div id="AGMPlans01Div" :style="{'background-color': selectedPtr===1?'#56cef3':'#ffffff'}" style="border: 2px solid black;width:350px; height:216px; margin: 0 auto"></div>-->
+<!--              </v-col>-->
+<!--              <v-col>-->
+<!--                <div id="LSSPlans01Div" :style="{'background-color': selectedPtr===1?'#56cef3':'#ffffff'}"  style="border: 2px solid black;width:350px; height:216px; margin: 0 auto"></div>-->
+<!--              </v-col>-->
+<!--            </v-row>-->
+<!--            <v-row align="center">-->
+<!--              <v-col cols="1">-->
+<!--                      <v-radio :value="2" ></v-radio>-->
+<!--              </v-col>-->
+<!--              <v-col>-->
+<!--                <div id="AGMPlans02Div" :style="{'background-color': selectedPtr===2?'#56cef3':'#ffffff'}" style="border: 2px solid black;width:350px; height:216px; margin: 0 auto"></div>-->
+<!--              </v-col>-->
+<!--              <v-col>-->
+<!--                <div id="LSSPlans02Div" :style="{'background-color': selectedPtr===2?'#56cef3':'#ffffff'}" style="border: 2px solid black;width:350px; height:216px; margin: 0 auto"></div>-->
+<!--              </v-col>-->
+<!--            </v-row>-->
+<!--            <v-row align="center">-->
+<!--              <v-col cols="1">-->
+<!--                <v-radio :value="3" ></v-radio>-->
+<!--              </v-col>-->
+<!--              <v-col>-->
+<!--                <div id="AGMPlans03Div" :style="{'background-color': selectedPtr===3?'#56cef3':'#ffffff'}" style="border: 2px solid black;width:350px; height:216px; margin: 0 auto"></div>-->
+<!--              </v-col>-->
+<!--              <v-col>-->
+<!--                <div id="LSSPlans03Div" :style="{'background-color': selectedPtr===3?'#56cef3':'#ffffff'}" style="border: 2px solid black;width:350px; height:216px; margin: 0 auto"></div>-->
+<!--              </v-col>-->
+<!--            </v-row>-->
+<!--            <v-row align="center">-->
+<!--              <v-col cols="1">-->
+<!--                <v-radio :value="4" ></v-radio>-->
+<!--              </v-col>-->
+<!--              <v-col >-->
+<!--                <div id="AGMPlans04Div" :style="{'background-color': selectedPtr===4?'#56cef3':'#ffffff'}" style="border: 2px solid black;width:350px; height:216px; margin: 0 auto"></div>-->
+<!--              </v-col>-->
+<!--              <v-col>-->
+<!--                <div id="LSSPlans04Div" :style="{'background-color': selectedPtr===4?'#56cef3':'#ffffff'}" style="border: 2px solid black;width:350px; height:216px; margin: 0 auto"></div>-->
+<!--              </v-col>-->
+<!--            </v-row>-->
             </v-radio-group>
             </v-card>
           </v-col>
         </v-row>
-
-              <v-spacer style="height: 20px"></v-spacer>
-
+          <v-spacer style="height: 20px"></v-spacer>
       </v-card>
     </v-container>
 
@@ -422,11 +424,16 @@
   },
   data:()=>({
       wordnetExLoadFlag:true,
-    selectedPtr:0,
-    aids_query,
-    wordnet_query,
-    displaysRoute:"../asset/5_cypher/",
-    displayNums:null,
+      selectedPtr:0,
+      aids_query,
+      wordnet_query,
+      displaysRoute:"../asset/5_cypher/",
+      displayNums:null,
+      colorPanel: {
+		  background: '#DAE6E4',
+		  foreground: '#D2A8B2',
+		  textColor: 'black',
+	  },
     graphHeader:[
       {text:"vid1", value:"from", sortable:false},
       {text:"vLabel1", value:"vLabel1", sortable:false},
@@ -509,14 +516,17 @@
           this.makeMap("LSSPlans0" + i + "Div", 10 + i, true);
         }
 
-        for (let i = 0; i < 10; i++) {
-          this.loadMap(null, 15+i, this.aids_query[i]);
-        }
+
+      }, 1000);
+
+      setTimeout(()=>{
+		  for (let i = 0; i < 10; i++) {
+			  this.loadMap(null, 15+i, this.aids_query[i]);
+		  }
 		  for (let i = 0; i < 10; i++) {
 			  this.loadMap(null, 30+i, this.wordnet_query[i]);
 		  }
-      }, 500);
-
+      }, 1500);
 
     },
 
@@ -578,7 +588,7 @@
           if (node.tiime !== undefined) str += "time: " + node.tiime + "\n";
           return str;
         }
-        
+
            */
         let diagram = $(go.Diagram, String(diagramName),
           {
@@ -612,13 +622,14 @@
 
 
         if (!givenDivName || givenDivName && robotDiagramOrder>=15){
-          diagram.nodeTemplate = $(go.Node,"Auto", {locationSpot:go.Spot.Center,/* toolTip: tooltiptemplate*/},
+          diagram.nodeTemplate = $(go.Node,"Auto", {
+          	locationSpot:go.Spot.Center/* toolTip: tooltiptemplate*/},
                   new go.Binding("location","loc"),
                   $(go.Panel, "Auto",
                           $(go.Shape, "Circle",
                                   {
                                   	//vertex setting
-                                    width:40, height:40, stroke: "#000000",fill:"#ffffff",
+                                    width:40, height:40, stroke: "#000000",fill:"#D2A8B2",
                                     strokeWidth: givenDivOrder?2:2, portId: "", cursor: "pointer",  // the Shape is the port, not the whole Node
                                     fromLinkable: true, fromLinkableSelfNode: false, fromLinkableDuplicates: false,
                                     toLinkable: true, toLinkableSelfNode: false, toLinkableDuplicates: false,
@@ -638,7 +649,7 @@
                           $(go.Shape, "RoundedRectangle",
                                   {
                                     height:130,
-                                    fill: "white", // the default fill, if there is no data bound value
+                                    fill: "#D2A8B2", // the default fill, if there is no data bound value
                                     portId: "", cursor: "pointer",  // the Shape is the port, not the whole Node
                                     // allow all kinds of links from and to this port
                                     fromLinkable: false, fromLinkableSelfNode: false, fromLinkableDuplicates: false,
@@ -722,6 +733,7 @@
 
         //console.log(queryCode, selectId);
         if (selectId !== undefined && selectId !==null) {
+        	//panel 4 query
         	this.selectedPtr = selectId;
 		}
         else this.selectedPtr = 0;//the panel2 query
@@ -763,7 +775,6 @@
           let that = this;
 
           //this.selectedPtr = 0;
-            let relations = new Array(6);
           //panel 3
           //agm
           let panel3Key = 0;
@@ -1014,27 +1025,6 @@
         }
       },
 
-      showSel(){
-        var tar = this.myDiagram.selection.first();
-
-        if (!tar || !tar.type || !tar.type.name ) console.log(tar)
-        else switch (tar.type.name) {
-          case "Link":{
-            console.log("A Link");
-            break;
-          }
-          case "Auto":{
-            console.log("A Node");
-            console.log("connected links:");
-            tar.linksConnected.each(item => console.log("show link:",item.data));
-            break;
-          }
-          default:{
-            console.log("Unknown",tar.type.name);
-          }
-        }
-      },
-
       clearMap(robotDiagramId){
         console.log(robotDiagramId)
         let nodesList = [];
@@ -1178,6 +1168,37 @@
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style scoped>
+
+    .gojspanel_basic{
+        background-color: #DAE6E4;
+    }
+
+    .example_patterns_gojspanel{
+        border: 2px solid black;
+        width:180px;
+        height:190px;
+        margin: 0 auto;
+    }
+
+    .query_graph_gojspanel{
+        width:360px;
+        height:315px;
+        border: 2px solid black;
+        margin: 0 auto;
+    }
+
+    .plans_gojspanel{
+        border: 2px solid black;width:320px; height:220px; margin: 0 auto
+    }
+
+    .agm_gojspanel{
+        width:320px; border: 2px solid black;height:220px; margin: 0 auto
+    }
+
+    .lss_gojspanel{
+        width:320px; border: 2px solid black;height:220px; margin: 0 auto
+    }
+
     .title{
         font-size: 30px;
         font-family: "Arial",serif;
