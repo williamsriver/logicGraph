@@ -4,9 +4,8 @@
     <v-container fluid>
       <v-card height="430" >
         <v-row>
-          <v-col cols="2" style="">
-              <v-card height="400" flat class="overflow-y-hidden">
-                  <v-card height="400" v-show="datasetValue==='aids'" class="overflow-y-auto">
+          <v-col cols="2">
+              <v-card height="400" v-show="datasetValue==='aids'" class="overflow-y-auto">
                       <div class="title text-h5" style="text-align: center; ">example patterns</div>
                       <v-container fluid v-for="i in 10" :key="i">
                           <div :id="'Dis0'+(i-1)+'Div'" class="gojspanel_basic example_patterns_gojspanel"></div>
@@ -54,7 +53,7 @@
 
 
                   </v-card>
-                  <v-card height="400" class="overflow-y-auto">
+              <v-card height="400" v-show="datasetValue!=='aids'" class="overflow-y-auto">
                       <div class="title text-h5" style="text-align: center; ">example patterns</div>
                       <v-container fluid v-for="i in 10" :key="i">
                           <div :id="'Dis0'+(i+14)+'Div'" class="gojspanel_basic example_patterns_gojspanel"></div>
@@ -101,25 +100,18 @@
 <!--                      <v-spacer style="height: 20px"></v-spacer>-->
 
                   </v-card>
-              </v-card>
-
-
           </v-col>
           <v-col cols="3" >
               <v-card class="pa-0 ma-0 overflow-y-auto overflow-x-hidden" height="400">
                   <div class="title text-h5" style="text-align: center; ">query graph</div>
-                  <v-row dense>
-                      <v-col>
-                          <div id="myDiagramDiv" class="gojspanel_basic query_graph_gojspanel"></div>
-                      </v-col>
-                  </v-row>
-                  <v-row dense align-content="space-around">
-                      <v-col > <v-btn @click="makeNode()" width="40" >add</v-btn> </v-col>
-                      <v-col > <v-btn @click="delNode" width="40">delete</v-btn></v-col>
-                      <v-col > <v-btn @click="clearMap(null)" width="40">clear</v-btn></v-col>
-<!--                      <v-col > <v-btn @click="openInput('fileInput')"  width="40">load</v-btn></v-col>-->
-                      <v-col > <v-btn @click="makeQuery(queryCode,null)" width="40">query</v-btn></v-col>
-                  </v-row>
+                  <div id="myDiagramDiv" class="gojspanel_basic query_graph_gojspanel"></div>
+                  <v-card-actions style="justify-content: center">
+                      <v-btn @click="makeNode()" width="40" >add</v-btn>
+                      <v-btn @click="delNode" width="40">delete</v-btn>
+                      <v-btn @click="clearMap(null)" width="40">clear</v-btn>
+                          <!--                      <v-col > <v-btn @click="openInput('fileInput')"  width="40">load</v-btn></v-col>-->
+                      <v-btn @click="makeQuery(queryCode,null)" width="40">query</v-btn>
+                  </v-card-actions>
                   <v-file-input hide-input id="fileInput"
                                 @change ="loadMap(makingFile, null)"
                                 v-model="makingFile" v-show="false">
@@ -338,25 +330,27 @@
             <div class="text-h5" style="text-align: center">candidate GHD plans </div>
 
             <v-row>
-              <v-col cols="0.5"></v-col>
               <v-col> <div class="text-h6" style="text-align: center">AGM plans</div> </v-col>
               <v-col> <div class="text-h6" style="text-align: center">LSS plans</div> </v-col>
             </v-row>
+
+
             <v-radio-group v-model="selectedPtr">
-                <v-row  align="center" v-for="i in 5" :key="'resultrow'+i">
-                  <v-col cols="0.5">
-                    <v-radio :value="i-1" ></v-radio>
-                  </v-col>
-                  <v-col>
-                    <div :id="'AGMPlans0'+(i-1)+'Div'"
-                         :class="{'gojspanel_basic':selectedPtr===i-1}"
-                          class="plans_gojspanel"></div>
-                  </v-col>
-                  <v-col>
-                    <div :id="'LSSPlans0'+(i-1)+'Div'" :class="{ 'gojspanel_basic' :selectedPtr===i-1}"
-                         class="plans_gojspanel" ></div>
-                  </v-col>
-                </v-row>
+                <v-container>
+                    <v-row  align="center" v-for="i in 5" :key="'resultrow'+i">
+                        <v-radio :value="i-1" ></v-radio>
+                        <v-col>
+                            <div :id="'AGMPlans0'+(i-1)+'Div'"
+                                 :class="{'gojspanel_basic':selectedPtr===i-1}"
+                                 class="plans_gojspanel"></div>
+                        </v-col>
+                        <v-col>
+                            <div :id="'LSSPlans0'+(i-1)+'Div'" :class="{ 'gojspanel_basic' :selectedPtr===i-1}"
+                                 class="plans_gojspanel" ></div>
+                        </v-col>
+                    </v-row>
+                </v-container>
+
 <!--            <v-row align="center">-->
 <!--              <v-col cols="1">-->
 <!--                <v-radio :value="1"></v-radio>-->
@@ -437,11 +431,11 @@
 		  textColor: 'black',
 	  },
     graphHeader:[
-      {text:"vid1", value:"from", sortable:false},
-      {text:"vLabel1", value:"vLabel1", sortable:false},
-      {text:"vid2", value:"to", sortable:false},
-      {text:"vLabel2", value:"vLabel2", sortable:false},
-      {text:"eLabel", value:"eLabel", sortable:false},
+      {text:"v1", value:"from", sortable:false},
+      {text:"v1_label", value:"vLabel1", sortable:false},
+      {text:"v2", value:"to", sortable:false},
+      {text:"v2_label", value:"vLabel2", sortable:false},
+      {text:"e_label", value:"eLabel", sortable:false},
       {text:"", value:"actions", sortable:false},
     ],
     dataHeader:[
@@ -747,7 +741,7 @@
 
 
         this.axios.get(!selectId?this.getRefreshQueryCode(this.datasetValue):"api/plan/"+selectId,{
-          timeout: 60000 //15s
+          timeout: 60
         })
         .then(response=>{
           console.log(response);
@@ -757,7 +751,7 @@
           if (selectId===undefined || selectId===null){
 
           }
-          let queryResult = response.data.resultPanel;
+          let queryResult = response.data.resultPanel || null;
           this.queryResultSize = response.data.resultPanel.resultSize;
           this.queryInfo = [
             {
@@ -922,9 +916,12 @@
           }
 
         })
-                .catch(e => {
-                  console.log(e);
-                  alert("error, please retry.");
+                .catch(error => {
+					if (error.code === 'ECONNABORTED' && error.message.indexOf('timeout') !== -1) {
+						alert("The query didn't finish in 1min.")
+					}
+					else alert("query failed.");
+                  //alert(e);
                 });
 
       },
@@ -1187,7 +1184,7 @@
 
     .query_graph_gojspanel{
         width:350px;
-        height:315px;
+        height:300px;
         border: 2px solid black;
         margin: 0 auto;
     }
