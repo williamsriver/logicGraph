@@ -920,8 +920,7 @@
 					if (error.code === 'ECONNABORTED' && error.message.indexOf('timeout') !== -1) {
 						alert("The query didn't finish in 1min.")
 					}
-					else alert("query failed.");
-                  //alert(e);
+					//else alert("query failed.");
                 });
 
       },
