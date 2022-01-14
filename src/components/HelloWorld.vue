@@ -194,16 +194,16 @@
                                                   <v-text-field v-model="editedItem.from" label="v1"></v-text-field>
                                               </v-col>
                                               <v-col cols="12" sm="6" md="4">
-                                                  <v-text-field v-model="editedItem.vLabel1" label="vLabel1"></v-text-field>
+                                                  <v-text-field v-model="editedItem.vLabel1" label="v1_label"></v-text-field>
                                               </v-col>
                                               <v-col cols="12" sm="6" md="4">
                                                   <v-text-field v-model="editedItem.to" label="v2"></v-text-field>
                                               </v-col>
                                               <v-col cols="12" sm="6" md="4">
-                                                  <v-text-field v-model="editedItem.vLabel2" label="vLabel2"></v-text-field>
+                                                  <v-text-field v-model="editedItem.vLabel2" label="v2_label"></v-text-field>
                                               </v-col>
                                               <v-col cols="12" sm="6" md="4">
-                                                  <v-text-field v-model="editedItem.eLabel" label="eLabel"></v-text-field>
+                                                  <v-text-field v-model="editedItem.eLabel" label="e_label"></v-text-field>
                                               </v-col>
                                           </v-row>
                                       </v-container>
@@ -694,7 +694,7 @@
           let fromLabel = item.vLabel1?item.vLabel1:this.findLabelFromKey(item.from);
           let toLabel = item.vLabel2?item.vLabel2:this.findLabelFromKey(item.to);
           newCode += "(" + fromId + ":" + fromLabel + ")";
-          if (item.eLabel===-1 || !item.eLabel) newCode += "->(" + toId + ":" + toLabel + "),";
+          if (item.eLabel===-1 || !item.eLabel || item.eLabel==="-1") newCode += "->(" + toId + ":" + toLabel + "),";
           else newCode += "-[" + item.eLabel + "]->(" + toId + ":" + toLabel + "),";
         });
         newCode = newCode.substring(0,newCode.length-1);//delete the last ','
