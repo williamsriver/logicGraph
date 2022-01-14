@@ -234,7 +234,7 @@
 
               </v-card-title>
               <div v-show="datasetValue==='wordnet'">
-                <div >wordnet is a lexical network with 76,853 vertices and 120,399 edges. The vertex label distribution is as follows:</div>
+                <div >Wordnet is a lexical network with 76,853 vertices and 120,399 edges. All edge labels are 0. The vertex label distribution is as follows:</div>
                 <v-row>
                     <v-spacer></v-spacer>
                     <v-col><v-img src="../assets/wordnet_label(2).ac408ebe.jpg" width="350" /></v-col>
@@ -476,7 +476,7 @@
     editedIndex:0,
     panelDialog: false,
     radioGroup:"",
-    datasetValue:"aids",
+    datasetValue:"wordnet",
     myDiagram:null,
     diagramsShowcase:[],
     nodeNum:0,
@@ -918,7 +918,7 @@
         })
                 .catch(error => {
 					if (error.code === 'ECONNABORTED' && error.message.indexOf('timeout') !== -1) {
-						alert("The query didn't finish in 1min.")
+						alert("The query can not finish in 1min. Please retry.")
 					}
 					//else alert("query failed.");
                 });
