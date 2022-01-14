@@ -190,15 +190,15 @@
                                   <v-card-text>
                                       <v-container>
                                           <v-row>
-                                              <v-col cols="12" sm="6" md="4">
+                                              <!-- <v-col cols="12" sm="6" md="4">
                                                   <v-text-field v-model="editedItem.from" label="v1"></v-text-field>
-                                              </v-col>
+                                              </v-col> -->
                                               <v-col cols="12" sm="6" md="4">
                                                   <v-text-field v-model="editedItem.vLabel1" label="v1_label"></v-text-field>
                                               </v-col>
-                                              <v-col cols="12" sm="6" md="4">
+                                              <!-- <v-col cols="12" sm="6" md="4">
                                                   <v-text-field v-model="editedItem.to" label="v2"></v-text-field>
-                                              </v-col>
+                                              </v-col> -->
                                               <v-col cols="12" sm="6" md="4">
                                                   <v-text-field v-model="editedItem.vLabel2" label="v2_label"></v-text-field>
                                               </v-col>
