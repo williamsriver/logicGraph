@@ -6,7 +6,7 @@
         <v-row>
           <v-col cols="2">
             <v-card height="400" v-show="datasetValue==='aids'" class="overflow-y-auto">
-              <div class="text-5" style="text-align: center; ">Example patterns</div>
+              <div class="text-5" style="text-align: center; ">Example Patterns</div>
               <v-container fluid v-for="i in 10" :key="i">
                 <div :id="'Dis0'+(i-1)+'Div'" class="gojspanel_basic example_patterns_gojspanel"></div>
                 <div class="text-center">
@@ -15,48 +15,11 @@
                   </v-btn>
                 </div>
               </v-container>
-              <!--                      <div id="Dis00Div" class="gojspanel_basic example_patterns_gojspane l"></div>-->
-              <!--                      <div class="text-center"><v-btn text @click="loadMap(null,null,aids_query[0])"><v-icon>mdi-arrow-right</v-icon> </v-btn></div>-->
-              <!--                      <v-spacer style="height: 20px"></v-spacer>-->
-
-              <!--                      <div id="Dis01Div" class="gojspanel" style="border: 2px solid black; width:180px; height:190px;margin: 0 auto"></div>-->
-              <!--                      <div class="text-center"><v-btn text @click="loadMap(null,null,aids_query[1])"><v-icon>mdi-arrow-right</v-icon> </v-btn></div>-->
-              <!--                      <v-spacer style="height: 20px"></v-spacer>-->
-
-              <!--                      <div id="Dis02Div" style=""></div>-->
-              <!--                      <div class="text-center"><v-btn text @click="loadMap(null,null,aids_query[2])"><v-icon>mdi-arrow-right</v-icon> </v-btn></div>-->
-              <!--                      <v-spacer style="height: 20px"></v-spacer>-->
-
-              <!--                      <div id="Dis03Div" style="width:180px; height:190px;background-color: #56cef3;margin: 0 auto "></div>-->
-              <!--                      <div class="text-center"><v-btn text @click="loadMap(null,null,aids_query[3])"><v-icon>mdi-arrow-right</v-icon> </v-btn></div>-->
-              <!--                      <v-spacer style="height: 20px"></v-spacer>-->
-
-              <!--                      <div id="Dis04Div" style="border: 2px solid black; width:180px; height:190px;background-color: #56cef3; margin: 0 auto"></div>-->
-              <!--                      <div class="text-center"><v-btn text @click="loadMap(null,null,aids_query[4])"><v-icon>mdi-arrow-right</v-icon> </v-btn></div>-->
-              <!--                      <v-spacer style="height: 20px"></v-spacer>-->
-
-              <!--                      <div id="Dis05Div" style="border: 2px solid black; width:180px; height:190px;background-color: #56cef3; margin: 0 auto"></div>-->
-              <!--                      <div class="text-center"><v-btn text @click="loadMap(null,null,aids_query[5])"><v-icon>mdi-arrow-right</v-icon> </v-btn></div>-->
-              <!--                      <v-spacer style="height: 20px"></v-spacer>-->
-              <!--                      <div id="Dis06Div" style="border: 2px solid black; width:180px; height:190px;background-color: #56cef3; margin: 0 auto"></div>-->
-              <!--                      <div class="text-center"><v-btn text @click="loadMap(null,null,aids_query[6])"><v-icon>mdi-arrow-right</v-icon> </v-btn></div>-->
-              <!--                      <v-spacer style="height: 20px"></v-spacer>-->
-              <!--                      <div id="Dis07Div" style="border: 2px solid black; width:180px; height:190px;background-color: #56cef3; margin: 0 auto"></div>-->
-              <!--                      <div class="text-center"><v-btn text @click="loadMap(null,null,aids_query[7])"><v-icon>mdi-arrow-right</v-icon> </v-btn></div>-->
-              <!--                      <v-spacer style="height: 20px"></v-spacer>-->
-              <!--                      <div id="Dis08Div" style="border: 2px solid black; width:180px; height:190px;background-color: #56cef3; margin: 0 auto"></div>-->
-              <!--                      <div class="text-center"><v-btn text @click="loadMap(null,null,aids_query[8])"><v-icon>mdi-arrow-right</v-icon> </v-btn></div>-->
-              <!--                      <v-spacer style="height: 20px"></v-spacer>-->
-              <!--                      <div id="Dis09Div" style="border: 2px solid black; width:180px; height:190px;background-color: #56cef3; margin: 0 auto"></div>-->
-              <!--                      <div class="text-center"><v-btn text @click="loadMap(null,null,aids_query[9])"><v-icon>mdi-arrow-right</v-icon> </v-btn></div>-->
-              <!--                      <v-spacer style="height: 20px"></v-spacer>-->
-
-
             </v-card>
-            <v-card height="400" v-show="datasetValue!=='aids'" class="overflow-y-auto">
+            <v-card height="400" v-show="datasetValue!=='aids'" class="overflow-y-auto" >
               <div class="text-5" style="text-align: center; ">Example Patterns</div>
               <v-container fluid v-for="i in 10" :key="i">
-                <div :id="'Dis0'+(i+14)+'Div'" class="gojspanel_basic example_patterns_gojspanel"></div>
+                <div :id="'Dis0'+(i+14)+'Div'" class="gojspanel_basic example_patterns_gojspanel example_node_div"></div>
                 <div class="text-center">
                   <v-btn text @click="loadMap(null,null,wordnet_query[i-1])">
                     <v-icon>mdi-arrow-right</v-icon>
@@ -247,16 +210,16 @@
 
               </div>
 
-              <div v-show="datasetValue==='aids'">
-                <div >Aids is a biological network with 253,598 vertices and 273,955 edges. The vertex label distribution and edge label distribution are as follows:</div>
+              <div class="dataset_describe" v-show="datasetValue==='aids'">
+                <div class="dataset_describe_content">Aids is a biological network with 253,598 vertices and 273,955 edges. The vertex label distribution and edge label distribution are as follows:</div>
                 <v-row>
                   <v-spacer></v-spacer>
-                  <v-col><v-img src="../assets/aids_vertex_label.jpg" max-width="350"/></v-col>
+                  <v-col><v-img src="../assets/aids_vertex_label.jpg" width="350"/></v-col>
                   <v-spacer></v-spacer>
                 </v-row>
                 <v-row>
                   <v-spacer></v-spacer>
-                  <v-col><v-img src="../assets/aids_edge_label.jpg" max-width="350"/></v-col>
+                  <v-col><v-img src="../assets/aids_edge_label.jpg" width="350"/></v-col>
                   <v-spacer></v-spacer>
                 </v-row>
 
@@ -333,7 +296,7 @@
           </v-col>
           <v-col cols="6.5">
             <!--            <v-card height="700" class="overflow-y-auto">-->
-            <v-card height="400" class="overflow-y-auto" padding="0">
+            <v-card height="400" class="overflow-y-auto candidate_div" padding="0">
               <div class="text-5" style="text-align: center">Candidate GHD Plans </div>
 
               <v-row>
@@ -952,8 +915,8 @@ export default {
         {x: 30, y:90}, {x:-90, y:90}, {x:-150, y:-10}
       ]
       //270*370, 300*160
-      if(this.nodeNum < 6) {
-        if (!key){
+      // if(this.myDiagram.model.nodeDataArray.length < 6) {
+        if (!key && this.myDiagram.model.nodeDataArray.length < 6){
           let x =Math.random() * 200 , y= Math.random() * 320
           this.nodeNum = this.myDiagram.model.nodeDataArray.length;
           this.nodeNum++;
@@ -966,7 +929,7 @@ export default {
           }
           tar.position.set(new go.Point(x, y));
         }
-        else if (key && robotDiagramId>=15){
+        else if (key && robotDiagramId>=15 && this.myDiagram.model.nodeDataArray.length < 6){
           let x =Math.random() * 200 , y= Math.random() * 320
           this.displayNums[robotDiagramId]++;
           let newlabel = this.displayNums[robotDiagramId];
@@ -978,7 +941,7 @@ export default {
           }
           tar.position.set(new go.Point(x, y));
         }
-        else if (!robotDiagramId){//main panel automatic
+        else if (!robotDiagramId && this.myDiagram.model.nodeDataArray.length < 6){//main panel automatic
           this.myDiagram.model.addNodeData({label:label, key: key, });
           let tar = this.myDiagram.findNodeForKey(key);
 
@@ -1011,7 +974,7 @@ export default {
           if (order!==undefined && robotDiagramId<15) tar.position.set(new go.Point(panel34Pos[order].x, panel34Pos[order].y));
           else tar.position.set(new go.Point(Math.random() * 250, Math.random() * 150));
         }
-      }
+      // }
     },
 
     makeEdge(data, robotDiagramId){
@@ -1273,5 +1236,10 @@ v-data-table,th,td {
 .notice {
   font-size: 11px;
   text-align: center;
+}
+
+.candidate_div {
+  overflow-x: hidden;
+  overflow-y: hidden;
 }
 </style>
