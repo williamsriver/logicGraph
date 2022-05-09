@@ -231,7 +231,7 @@
       <v-spacer style="height: 8px"></v-spacer>
       <v-card>
         <v-row>
-          <v-col cols="4">
+          <v-col cols="5">
             <!--            <v-card height="700">-->
             <v-card height="400" >
               <!--              <div class="title" style="text-align: center">selected GHD plan </div>-->
@@ -446,7 +446,7 @@ export default {
     editedIndex:0,
     panelDialog: false,
     radioGroup:"",
-    datasetValue:"wordnet",
+    datasetValue:"aids",
     myDiagram:null,
     diagramsShowcase:[],
     nodeNum:0,
@@ -465,6 +465,21 @@ export default {
     this.diagramsShowcase = new Array(100);
     this.PlansResult.agmPlans = new Array(100);
     this.PlansResult.lssPlans = new Array(100);
+    // let imgs = [
+    //     "../assets/wordnet_label.jpg",
+    //     "../assets/aids_vertex_label.jpg",
+    //     "../assets/aids_edge_label.jpg",
+    //   ]
+    // for (let img of imgs) {
+    //     let image = new Image();
+    //     image.src = img;
+    //     image.onload = () => {
+    //       console.log("load image");
+    //     }
+    //     image.onerror = () => {
+    //       console.log("error image");
+    //     }
+    //   }
 
 
     setTimeout(()=>{
@@ -645,7 +660,7 @@ export default {
       myModel.nodeDataArray = [];
       myModel.linkDataArray = [];
       diagram.model = myModel;
-
+      diagram.contentAlignment = go.Spot.Center
       if (!givenDivName){
         this.myDiagram = diagram;
         this.nodeNum = myModel.nodeDataArray.length;
@@ -916,20 +931,31 @@ export default {
       ]
       //270*370, 300*160
       // if(this.myDiagram.model.nodeDataArray.length < 6) {
-        if (!key && this.myDiagram.model.nodeDataArray.length < 6){
+        this.nodeNum = this.myDiagram.model.nodeDataArray.length;
+        if (this.nodeNum >= 6) {
+
+        }
+        else if (!key){
           let x =Math.random() * 200 , y= Math.random() * 320
-          this.nodeNum = this.myDiagram.model.nodeDataArray.length;
           this.nodeNum++;
-          let newlabel = this.nodeNum <= 5 ? this.nodeNum : 0;
-          this.myDiagram.model.addNodeData({label: newlabel, key: this.nodeNum,});
-          let tar = this.myDiagram.findNodeForKey(this.nodeNum);
-          if (this.nodeNum<=6 && !key){
-            x= panel2Pos[this.nodeNum].x;
-            y = panel2Pos[this.nodeNum].y;
+          var newKey = 7;
+          var newLabel = 7
+          for (var i = 1; i <= 6; i++) {
+            if (!this.myDiagram.findNodeForKey(i)) {
+              newLabel = i
+              newKey = i
+              break;
+            }
+
           }
+          this.myDiagram.model.addNodeData({label: newLabel, key: newKey,});
+          let tar = this.myDiagram.findNodeForKey(newKey);
+          console.log("%d", tar.key)
+          x= panel2Pos[tar.key].x;
+          y = panel2Pos[tar.key].y;
           tar.position.set(new go.Point(x, y));
         }
-        else if (key && robotDiagramId>=15 && this.myDiagram.model.nodeDataArray.length < 6){
+        else if (key && robotDiagramId>=15){
           let x =Math.random() * 200 , y= Math.random() * 320
           this.displayNums[robotDiagramId]++;
           let newlabel = this.displayNums[robotDiagramId];
@@ -941,12 +967,12 @@ export default {
           }
           tar.position.set(new go.Point(x, y));
         }
-        else if (!robotDiagramId && this.myDiagram.model.nodeDataArray.length < 6){//main panel automatic
+        else if (!robotDiagramId){//main panel automatic
           this.myDiagram.model.addNodeData({label:label, key: key, });
           let tar = this.myDiagram.findNodeForKey(key);
 
           let x =Math.random() * 200 , y= Math.random() * 320
-          if (key <=6){
+          if (key <= 6){
             x= panel2Pos[key].x;
             y = panel2Pos[key].y;
           }
@@ -986,7 +1012,7 @@ export default {
       //selection shows the selected collections for a diagram
       //use first() to get the first selected object
       var tar = this.myDiagram.selection.first();
-
+      this.nodeNum--;
       if (!tar || !tar.type || !tar.type.name ) console.log(tar)
       else switch (tar.type.name) {
         case "Link":{ this.myDiagram.model.removeLinkData(tar.data); break;}
